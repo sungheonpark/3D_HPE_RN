@@ -1,0 +1,27 @@
+# The train/test net protocol buffer definition
+net: "models/RN/net_rn.prototxt"
+# test_iter specifies how many forward passes the test should carry out.
+test_iter: 4288
+# Carry out testing every 5000 training iterations.
+test_interval: 5000
+# The base learning rate, momentum and the weight decay of the network.
+average_loss: 100
+base_lr: 0.001
+weight_decay: 0.0001
+# The learning rate policy
+lr_policy: "step"
+stepsize: 20000
+gamma: 0.5
+# Display every 1000 iterations
+display: 1000
+# The maximum number of iterations
+max_iter: 100000
+# snapshot intermediate results
+snapshot: 50000
+snapshot_prefix: "models/RN/net"
+# solver mode: CPU or GPU
+solver_mode: GPU
+
+type: "Adam"
+momentum: 0.9
+momentum2: 0.999
